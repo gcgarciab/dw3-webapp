@@ -11,7 +11,7 @@
     </div>
   </header>
 
-  <router-view @logged="isAuth = true"/>
+  <router-view @logged="logged()"/>
 
   <footer>
     <h2>MissionTIC 2022</h2>
@@ -56,14 +56,19 @@ export default {
         }
       })
       .then(result => {
-        // console.log(result)
-        this.isAuth = false
+        console.log(result)
+        this.isAuth = true
         localStorage.setItem('access', result.data.refreshToken.access)
       })
       .catch(() => {
         alert("Session expired, login again !")
         this.logout()
       })
+    },
+
+    logged() {
+      this.isAuth = true
+      this.userId = localStorage.getItem('userId')
     },
 
     logout() {

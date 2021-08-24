@@ -5,6 +5,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link :to="'/user/' + userId">Profile</router-link> |
+      <router-link to="/user/history">History</router-link> |
+      <router-link to="/user/transactions/create">Transactions</router-link> |
       <button class="nav-button" @click="logout()">Logout</button>
     </div>
   </header>
@@ -54,7 +56,9 @@ export default {
         }
       })
       .then(result => {
-        console.log(result)
+        // console.log(result)
+        this.isAuth = false
+        localStorage.setItem('access', result.data.refreshToken.access)
       })
       .catch(() => {
         alert("Session expired, login again !")
@@ -83,6 +87,7 @@ export default {
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 #nav a {

@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <header v-if="isAuth">
     <h1>Banco UN</h1>
-    <div v-if="isAuth" id="nav">
+    <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link :to="'/user/' + userId">Profile</router-link> |
@@ -13,7 +13,7 @@
 
   <router-view @logged="logged()"/>
 
-  <footer>
+  <footer v-if="isAuth">
     <h2>MissionTIC 2022</h2>
   </footer>
 </template>

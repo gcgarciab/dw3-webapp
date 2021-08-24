@@ -66,4 +66,43 @@ export default {
 
 <style scoped>
 
+.user-history {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 110px);
+}
+
+hr {
+  width: 80%;
+}
+
+table {
+  margin: 40px 0 60px;
+}
+
+thead {
+  background: #2c3e50;
+  border: #2c3e50;
+}
+
+th {
+  color: #fff;
+  padding: 5px 15px;
+  width: 120px;
+}
+
+tbody tr {
+  border: #d1d1d1;
+}
+
+tbody tr:nth-child(2n) {
+  background: aliceblue;
+}
+
+td {
+  padding: 5px;
+}
+
 </style>

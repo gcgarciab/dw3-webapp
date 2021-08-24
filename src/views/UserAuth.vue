@@ -1,21 +1,21 @@
 <template>
-  <div>
+  <div class="content">
     <section class="login">
       <h1>Login</h1>
 
       <form class="login-form" @submit.prevent="authenticate()">
         <input
-          type="text"
-          class="form-control"
-          placeholder="Username"
-          v-model="username"
-        ><br>
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            v-model="username"
+        >
         <input
-          type="password"
-          class="form-control"
-          placeholder="Password"
-          v-model="password"
-        ><br>
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            v-model="password"
+        >
         <button type="submit" class="form-button">Submit</button>
       </form>
     </section>
@@ -77,6 +77,42 @@ export default {
   }
 }
 </script>
-<style lang="">
+<style>
 
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login {
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  border: 1px solid #2c3e50;
+  padding: 40px 60px;
+  box-sizing: border-box;
+}
+
+.login-form input {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  margin: 15px 0;
+  width: -webkit-fill-available;
+}
+
+.form-button {
+  margin-top: 30px;
+  display: block;
+  background: #2c3e50;
+  color: #fff;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+}
 </style>

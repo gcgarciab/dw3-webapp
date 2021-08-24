@@ -1,3 +1,4 @@
+import Transaction from '@/views/Transaction'
 import User from '@/views/User'
 import UserHistory from '@/views/UserHistory'
 import UserTransactions from '@/views/UserTransactions'
@@ -38,6 +39,11 @@ const routes = [
     path: '/user/transactions/create',
     name: 'UserTransactions',
     component: UserTransactions
+  },
+  {
+    path: '/transactions/:id',
+    name: 'Transaction',
+    component: Transaction
   }
 ]
 

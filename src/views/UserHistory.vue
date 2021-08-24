@@ -9,6 +9,7 @@
         <th>Id Origin</th>
         <th>Id Destiny</th>
         <th>Value</th>
+        <th>Link</th>
       </thead>
       <tbody>
         <tr v-for="transaction in transactionsByUserId" :key="transaction.id">
@@ -17,6 +18,7 @@
           <td>{{ transaction.userIdOrigin }}</td>
           <td>{{ transaction.userIdDestiny }}</td>
           <td>${{ transaction.value }}</td>
+          <td><router-link :to="'/transactions/' + transaction.id">Link</router-link></td>
         </tr>
       </tbody>
     </table>
